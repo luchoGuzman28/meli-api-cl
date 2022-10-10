@@ -17,7 +17,10 @@ router.get('/:id', async function(req, res, next) {
   }  
   catch(error)
   {
-     next(error);
+    return res.status(500).json({
+      data: {"shipmentId":id},
+      error: error,
+    });
   }
 });
 

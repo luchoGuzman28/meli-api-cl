@@ -15,7 +15,10 @@ router.get('/:id', async function(req, res, next) {
   }
   catch(error)
   {
-     next(error);
+    return res.status(500).json({
+      data: null,
+      error: error,
+    });
   }
 });
 
@@ -27,7 +30,10 @@ router.get('/:id/restrictions', async function(err,req, res, next) {
   }
   catch(error)
   {
-     next(error);
+    return res.status(500).json({
+      data: {"userId":id},
+      error: error,
+    });
   }
 });
 
@@ -39,7 +45,10 @@ router.get('/:id/purchases', async function(req, res, next) {
   }
   catch(error)
   {
-     next(error);
+    return res.status(500).json({
+      data: {"userId":id},
+      error: error,
+    });
   }
 });
 
